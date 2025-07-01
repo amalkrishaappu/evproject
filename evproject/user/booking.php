@@ -1,7 +1,6 @@
 <?php
 include '../config/db.php';
 session_start();
-
 if (!isset($_SESSION['user_id'])) {
     //header("Location: login.php");
     exit;
@@ -96,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
                 </div>
 
                 <button type="submit" name="book" class="btn btn-success">Book Slot</button>
+                <p>booking is completed</p>
                 <a href="stations.php" class="btn btn-secondary ms-2">Back to Stations</a>
             </form>
         </div>
