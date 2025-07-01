@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Station Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .booking-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="booking-form">
+  <h2>Book a Station</h2>
+  <form action="/submit-booking" method="post">
+    <label for="station">Select Station</label>
+    <select id="station" name="station" required>
+      <option value="">-- Choose a Station --</option>
+      <option value="station1">Station 1</option>
+      <option value="station2">Station 2</option>
+      <option value="station3">Station 3</option>
+    </select>
+
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Time Slot</label>
+    <select id="time" name="time" required>
+      <option value="">-- Choose a Time Slot --</option>
+      <option value="morning">Morning (9 AM - 12 PM)</option>
+      <option value="afternoon">Afternoon (1 PM - 4 PM)</option>
+      <option value="evening">Evening (5 PM - 8 PM)</option>
+    </select>
+
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+    <button type="submit">Book Now</button>
+  </form>
+</div>
+
+</body>
+</html>
