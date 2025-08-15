@@ -7,7 +7,7 @@ if (isset($_POST['register'])) {
     $phno=$_POST['phno'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $sql="insert into users(name,address,phone_number,email,password)values('$name','$address','$phno','$email', '$password')";
+    $sql="insert into users(name,address,phoneno,email,password)values('$name','$address','$phno','$email', '$password')";
     if (mysqli_query($conn,$sql)) {
         echo "Registration successful. <a href='login.php'>Login here</a>";
     } else {

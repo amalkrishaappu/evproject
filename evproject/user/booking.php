@@ -2,10 +2,10 @@
 include '../config/db.php';
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: login.php");
+//     exit;
+// }
 
 $message = "";
 
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
 
             <div class="d-flex justify-content-between">
                 <button type="submit" name="book" class="btn btn-gradient px-4">Book Slot</button>
-                <a href="stations.php" class="btn btn-outline-secondary">← Back to Home</a>
+                <a href="stations.php" class="btn btn-outline-secondary">← view stations</a>
             </div>
         </form>
     </div>

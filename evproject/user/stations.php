@@ -50,6 +50,12 @@ $result = mysqli_query($conn, $sql);
             position: relative;
             overflow: hidden;
         }
+        .charging-type {
+    color: #2980b9;
+    font-weight: 600;
+    margin-top: 5px;    
+        }
+
 
         .header::before {
             content: '';
@@ -465,6 +471,11 @@ $result = mysqli_query($conn, $sql);
                                     <?= htmlspecialchars($row['location']) ?>
                                 </div>
                             </div>
+                        </div>
+                       
+                        <div class="station-location charging-type">
+                            <span class="location-icon">⚙️</span>
+                            Charging Type: <?= htmlspecialchars($row['charging_type']) ?>
                         </div>
 
                         <div class="station-stats">

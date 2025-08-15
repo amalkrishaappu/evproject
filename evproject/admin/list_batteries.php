@@ -1,5 +1,6 @@
 <?php
 include '../config/db.php';
+
 $result = mysqli_query($conn, "SELECT * FROM battery");
 echo "<h2>Battery Inventory</h2><table border='1'>";
 echo "<tr><th>ID</th><th>Brand</th><th>Model</th><th>Capacity</th><th>Dimension</th><th>Torque</th><th>Life</th><th>Condition</th><th>Status</th></tr>";

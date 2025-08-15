@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     $name     = $row['name'];
-    $phone    = $row['phone_number'];
+    $phone    = $row['phoneno'];
     $address   = $row['address'];
 } else {
     echo "User not found.";

@@ -1,10 +1,5 @@
 <?php
 include('../config/db.php');
-session_start();
-if (!isset($_SESSION['admin_id'])) {
-    // header("Location: login.php");
-    // exit;
-}
 
 // Fetch stations
 $sql = "SELECT * FROM station";
@@ -129,9 +124,10 @@ $result = mysqli_query($conn, $sql);
         <tr>
           <th>ID</th>
           <th>Name</th>
+          <th>Charging type</th>
           <th>Location</th>
           <th>Slots</th>
-          <th>Available Slots</th>
+          <th>Available slot</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -140,6 +136,7 @@ $result = mysqli_query($conn, $sql);
           <tr>
             <td><?= $row['id'] ?></td>
             <td><?= $row['name'] ?></td>
+            <td><?=$row['charging_type']?></td>
             <td><?= $row['location'] ?></td>
             <td><?= $row['slot'] ?></td>
             <td><?= $row['available_slot'] ?></td>

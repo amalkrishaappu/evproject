@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
             $_SESSION['user_id'] = $row['id'];
 
             // Redirect to desired page
-            header("Location: user_dashboard.php");
+            header("Location: home.html");
             exit();
         } else {
             $msg = "❌ Incorrect password!";

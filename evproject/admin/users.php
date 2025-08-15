@@ -1,11 +1,5 @@
 <?php
 include('../config/db.php');
-session_start();
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: login.php");
-    exit;
-}
-
 
 $sql = "SELECT * FROM users";
 $result = mysqli_query($conn, $sql);

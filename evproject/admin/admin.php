@@ -1,3 +1,10 @@
+<?php
+if (!isset($_GET['auth']) || $_GET['auth'] !== "1") {
+  header("Location: adminlogin.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

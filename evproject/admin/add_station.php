@@ -1,19 +1,16 @@
 <?php
 include('../config/db.php');
-// session_start();
-// if (!isset($_SESSION['admin_id'])) {
-//     // header("Location: login.php");
-//     // exit;
-// }
+
 
 if (isset($_POST['add'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
+    $type=$_POST['type'];
     $location = $_POST['location'];
     $slots = $_POST['slots'];
-    $av_slots = $_POST['available'];
+    //$av_slots = $_POST['available'];
 
-    $sql = "INSERT INTO station(id, name, location, slot, available_slot) VALUES ('$id', '$name', '$location', '$slots', '$av_slots')";
+    $sql = "INSERT INTO station(id, name,charging_type,location, slot, available_slot) VALUES ('$id', '$name', '$type','$location', '$slots', '$slots')";
     mysqli_query($conn, $sql);
     header("Location: stations.php");
 }
@@ -105,14 +102,17 @@ if (isset($_POST['add'])) {
     <label for="name">Name:</label>
     <input type="text" name="name" required placeholder="Enter Station Name">
 
+    <label for="type">charging type:</label>
+    <input type="text" name="type" required placeholder="enter the charging type">
+
     <label for="location">Location:</label>
     <input type="text" name="location" required placeholder="Enter Location">
 
     <label for="slots">Total Slots:</label>
     <input type="number" name="slots" required placeholder="Enter Total Slots">
 
-    <label for="available">Available Slots:</label>
-    <input type="number" name="available" required placeholder="Enter Available Slots">
+    <!-- <label for="available">Available Slots:</label>
+    <input type="number" name="available" required placeholder="Enter Available Slots"> -->
 
     <button type="submit" name="add">Add Station</button>
   </form>
