@@ -1,14 +1,14 @@
 <?php
 include '../config/db.php';
 session_start();
-$user_id = $_SESSION['user_id'] ?? 1; // fallback user
+$user_id = $_SESSION['id'] ?? 1; // fallback user
 
 if (isset($_POST['rent'])) {
     $station_id = $_POST['station_id'];
     $brand = $_POST['brand'];
     $model = $_POST['model'];
 
-    $query = "SELECT * FROM battery WHERE brand='$brand' AND model='$model' AND is_rented=0 AND station_id='$station_id' LIMIT 1";
+    $query = "SELECT * FROM battery WHERE brand='$brand' AND model='$model' AND is_rented=0 AND st_id='$station_id' LIMIT 1";
     $result = mysqli_query($conn, $query);
 
     if ($battery = mysqli_fetch_assoc($result)) {
